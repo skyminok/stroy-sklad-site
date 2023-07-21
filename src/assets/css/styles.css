@@ -16,53 +16,56 @@ body {
 
 /*стили для всей страницы*/
 
-.header {
+.container .header {
     display: flex;
-    flex-wrap: nowrap;
+    flex-flow: nowrap;
     margin-top: 15px;
     margin-bottom: 5px;
     padding-top: 1px;
     font-family: "Pfdintextcomppro-light", sans-serif;
 }
 
-.header div {
-    flex-grow: 1;
-}
-
-.header-1 {
+.container .header .logo {
+    flex-grow: 1.5;
     padding-left: 5px;
 }
 
-.header-1 .imgSmallLeft {
+.container .header .header-info {
+    display: flex;
+    flex-grow: 4;
+}
+
+.container .header .header-info .header-item {
+    flex: 1 1 25%;
+    padding-left: 2px;
+}
+
+.container .header .logo .imgSmallLeft {
     width: 200px;
     margin-left: 0;
     padding-left: 0;
 }
 
-.header-2 {
-    min-width: 116px;
-}
-
-.header-2 div {
+.container .header .header-info .item-1 {
     position: relative;
 }
 
-.header-2 img {
+.container .header .header-info .item-1 img {
     position: absolute;
     margin-top: -5px;
     padding-left: 5px;
 }
 
-.header-2 a {
+.container .header .header-info .item-1 a {
     text-decoration: none;
     color: #000;
 }
 
-.header-5 {
+.container .header .header-info .item-4 {
     padding-top: 3px;
 }
 
-.header-5 a {
+.container .header .header-info .item-4 a {
     background: url("../images/cart.png") no-repeat;
     padding: 2px 0 20px 46px;
     text-decoration: none;
@@ -70,44 +73,47 @@ body {
     margin-bottom: 35px;
 }
 
-.header-5 span {
+.container .header .header-info .item-4 span {
     font-size: 20px;
 }
 
-.header-5 .shop {
+.container .header .header-info .item-4 .shop {
     margin: -6px 2px 5px 45px;
 }
 
 /* стили для header*/
 
-.bt {
+.container .bt {
     background: #ee4521;
     text-align: center;
 }
 
-.menu {
+.container .bt .wrap .menu {
     font-family: "Pfdintextcomppro-regular";
+    display: flex;
+    align-items: center;
+    height: 36px;
 }
 
-.menu .nav {
+.container .bt .wrap .menu .nav {
     flex-grow: 3;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
 }
 
-.menu .search {
+.container .bt .wrap .menu .search {
     position: relative;
     width: 251px;
 }
 
-.nav a {
+.container .bt .wrap .menu .nav a {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
 }
 
-.nav-item {
+.container .bt .wrap .menu .nav .nav-item {
     height: 36px;
     line-height: 36px;
     flex: 1 1;
@@ -116,25 +122,25 @@ body {
     text-align: center;
 }
 
-.nav-item:hover a {
+.container .bt .wrap .menu .nav .nav-item:hover {
+    background: url("../images/menu-bg-hov.png");
+}
+
+.container .bt .wrap .menu .nav .nav-item:hover a {
     color: #2f2f2f;
 }
 
-.nav-item a {
+.container .bt .wrap .menu .nav .nav-item a:hover {
     position: relative;
 }
 
-.nav-item a span {
+.container .bt .wrap .menu .nav .nav-item a span {
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
 }
 
-.nav-item:hover {
-    background: url("../images/menu-bg-hov.png");
-}
-
-.search img {
+.container .bt .wrap .menu .search img {
     position: absolute;
     width: 12px;
     height: 12px;
@@ -145,58 +151,45 @@ body {
 
 /*стили для bt*/
 
-.catalog {
+.container .catalog {
     display: grid;
     gap: 5px;
     padding: 5px;
     margin-top: 5px;
 }
 
-.catalog-item div {
+.container .catalog .catalog-item {
     padding-bottom: 3px;
-}
-
-.catalog-item {
     align-content: flex-end;
     background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.16) 0 1px 2px 0;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16);
     border-radius: 8px;
 }
 
-.catalog-item a div {
+.container .catalog .catalog-item a {
+    position: relative;
+    color: #000000;
+    text-decoration: none;
     text-align: center;
     padding-left: 3px;
     padding-right: 3px;
 }
 
-.catalog-item a {
-    position: relative;
-    color: #000000;
-    text-decoration: none;
-}
-
-.menu {
-    display: flex;
-    align-items: center;
-    height: 36px;
-}
-
 /* стили для catalog */
 
-.footer {
+.container .footer {
     display: flex;
     flex-flow: column;
 }
 
-.footer-info {
-    background-color: #e9473b;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    font-family: "Pfdintextcomppro-light", sans-serif;
+.container .footer-info {
+    background-color: #e86a60;
+    padding-top: 5px;
+    padding-bottom: 5px;
     text-align: center;
 }
 
-.footer-item {
+.container .footer-item {
     background-color: #585454;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -209,15 +202,24 @@ body {
 
 /* конец стилей для компьютеров и базовые стили для всех устройств */
 
-@media (min-width: 837px) {
-    .menu {
+
+@media screen and (min-width: 837px) {
+    .catalog {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .container .bt .wrap .menu {
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
         margin-bottom: 0;
     }
 
-    .mwrap {
+    .container .bt .wrap .mwrap {
+        display: none;
+    }
+
+    .container .header .mheader-info {
         display: none;
     }
 }
@@ -225,12 +227,15 @@ body {
 /* конец стилей для компьютеров */
 
 @media (min-width: 481px) and (max-width: 837px) {
+    .catalog {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
-    .nav-item {
+    .container .bt .wrap .menu .nav .nav-item {
         display: none;
     }
 
-    .mwrap {
+    .container .bt .wrap .mwrap {
         display: block;
         height: 16px;
         width: 4px;
@@ -242,98 +247,89 @@ body {
         position: absolute;
     }
 
-    .header-2 h3 {
+    .container .header .header-info {
         display: none;
     }
 
-    .header-3 {
-        display: none;
-    }
-
-    .header-4 {
-        display: none;
-    }
-
-    .header-5 {
-        display: none;
-    }
-
-    .header {
+    .container .header {
         margin-top: 0;
         margin-bottom: 0;
         padding-bottom: 2px;
     }
 
-    .header-2 {
-        padding-top: 25px;
+    .container .header .mheader-info {
+        flex-grow: 3;
+        padding-top: 5px;
     }
 
-    .header-2 span {
-        font-size: 20px;
+    .container .header .mheader-info div {
+        float: left;
+        margin-left: 20px;
     }
 
-    .header-2 img {
-        padding-top: -2px;
-        width: 25px;
+    .container .header .mheader-info a {
+        text-decoration: none;
+        color: #000;
     }
 
-    .search {
+    .container .header .mheader-info p {
+        font-size: 12px;
+    }
+
+    .container .bt .wrap .menu .search {
         float: right;
     }
 
-    .catalog-item {
+    .container .catalog .catalog-item {
         padding-bottom: 0;
     }
 
-    /*
-    .catalog div {
-        width: 200px;
-    }
-    */
-    .info span {
+    .container .catalog .catalog-item .info span {
         text-align: center;
         font-size: 13px;
     }
 
-    .figure img {
+    .container .catalog .catalog-item .figure img {
         width: 90px;
         height: 90px;
     }
 
-    .footer-info {
+    .container .footer .footer-info {
         padding-left: 5px;
         padding-right: 5px;
     }
 
-    .mmenu:before {
+    .container .footer p {
+        font-size: 13px;
+    }
+
+    .container .bt .wrap .mwrap .mmenu:before {
         top: 0
     }
 
-    .mmenu:after {
+    .container .bt .wrap .mwrap .mmenu:after {
         bottom: 0
     }
 
-    .mmenu div {
+    .container .bt .wrap .mwrap .mmenu div {
         top: 0;
         bottom: 0;
         margin: auto
     }
 }
 
-/* конец стилей для планшетов, 1 часть */
-
-.mmenu:before, .mmenu:after, .mmenu div {
+.container .bt .wrap .mwrap .mmenu:before, .mmenu:after, .mmenu div {
     background: #320606;
     content: "";
     position: absolute;
-    height: 4px;
+    height: 2px;
     width: 100%;
-    border-radius: 2px;
+    border-radius: 8px;
 }
 
-.mmenu {
-    width: 25px;
-    height: 20px;
+.container .bt .wrap .mwrap .mmenu {
+    width: 20px;
+    height: 14px;
     left: 0;
     top: 5px;
     position: absolute;
@@ -341,15 +337,145 @@ body {
     text-align: left;
 }
 
-.mwrap span {
-    font-size: 23px;
-    margin-left: 30px;
+.container .bt .wrap .mwrap span {
+    font-size: 20px;
+    margin-left: 20px;
     text-transform: uppercase;
 }
 
-/* конец стилей для планшетов, 2 часть */
+/* конец стилей для планшетов*/
 
 
+@media (max-width: 481px) {
+    .catalog {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container .header {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-bottom: 2px;
+    }
+
+    .container .header .logo .imgSmallLeft {
+        width: 140px;
+    }
+
+    .container .header .header-info {
+        display: none;
+    }
+
+    .container .header .mheader-info {
+        flex-grow: 3;
+        padding-top: 5px;
+    }
+
+    .container .header .mheader-info a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    .container .header .mheader-info p {
+        display: none;
+    }
+
+    .container .header .mheader-info div {
+        float: left;
+    }
+
+    .container .bt .wrap .menu .nav .nav-item {
+        display: none;
+    }
+
+    .container .bt .wrap .mwrap {
+        display: block;
+        height: 10px;
+        width: 3px;
+        color: #320606;
+        text-align: left;
+        margin-top: 10px;
+        margin-left: 30px;
+        padding-left: 12px;
+        position: absolute;
+    }
+
+    .container .bt .wrap .menu .search {
+        float: right;
+    }
+
+    .container .catalog .catalog-item {
+        padding-bottom: 0;
+    }
+
+    .container .catalog .catalog-item .info span {
+        text-align: center;
+        font-size: 11px;
+    }
+
+    .container .catalog .catalog-item .figure img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .container .footer .footer-info {
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+
+    .container .footer p {
+        font-size: 9px;
+    }
+
+    .container .footer .footer-info {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    .container .bt .wrap .mwrap .mmenu:before {
+        top: 0
+    }
+
+    .container .bt .wrap .mwrap .mmenu:after {
+        bottom: 0
+    }
+
+    .container .bt .wrap .mwrap .mmenu div {
+        top: 0;
+        bottom: 0;
+        margin: auto
+    }
+}
+
+.container .bt .wrap .mwrap .mmenu:before, .mmenu:after, .mmenu div {
+    background: #320606;
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.container .bt .wrap .mwrap .mmenu {
+    width: 16px;
+    height: 10px;
+    left: 0;
+    top: 5px;
+    position: absolute;
+    margin: auto;
+    text-align: left;
+}
+
+.container .bt .wrap .mwrap span {
+    font-size: 15px;
+    margin-left: 15px;
+    text-transform: uppercase;
+}
+
+/* конец стилей для мобильных устройств*/
+
+
+/*Изменение ширины*/
+/*
 @media screen and (min-width: 983px) {
     .catalog {
         grid-template-columns: repeat(4, 1fr);
@@ -366,4 +492,8 @@ body {
     .catalog {
         grid-template-columns: repeat(2, 1fr);
     }
-}
+}*/
+
+
+
+
