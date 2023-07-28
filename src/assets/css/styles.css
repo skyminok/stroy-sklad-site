@@ -3,6 +3,7 @@
 
 body {
     background-color: #f6f6f6;
+    font-family: "Manrope", sans-serif;
 }
 
 .container {
@@ -12,31 +13,34 @@ body {
 
 /*стили для всей страницы*/
 
-body {
-    font-family: "Manrope", sans-serif;
-}
-
 .container .header {
     display: flex;
     flex-flow: nowrap;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    padding-top: 1px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #e7e6e6;
 }
 
 .container .header .logo {
-    flex-grow: 1.5;
+    flex-grow: 1.2;
     padding-left: 5px;
 }
 
 .container .header .header-info {
     display: flex;
-    flex-grow: 4;
+    flex-grow: 7;
 }
 
-.container .header .header-info .header-item {
-    flex: 1 1 25%;
-    padding-left: 2px;
+.container .header .header-info .item-2, .item-3 {
+    flex-grow: 1.5;
+}
+
+.container .header .header-info .item-1 {
+    flex-grow: 1.6;
+}
+
+.header-info .item-1 p {
+    padding-left: 23px;
 }
 
 .container .header .logo .imgSmallLeft {
@@ -45,39 +49,46 @@ body {
     padding-left: 0;
 }
 
-.container .header .header-info .item-1 {
+.container .header .header-info .item-2 {
     position: relative;
+    padding-top: 20px;
+    min-width: 196px;
 }
 
-.container .header .header-info .item-1 img {
+.container .header .header-info .item-2 img {
     position: absolute;
-    margin-top: -7px;
-    padding-left: 5px;
+    margin-top: -9px;
+    padding-left: 8px;
 }
 
-.container .header .header-info .item-1 a {
+.container .header .header-info .item-2 a {
     text-decoration: none;
     color: #000;
 }
 
-.container .header .header-info .item-4 {
-    padding-top: 3px;
-    width: 32px;
+.container .header .header-info .item-2 a span {
+    font-size: 18px;
 }
 
-.container .header .header-info .item-4 a {
+.container .header .header-info .item-3 {
+    padding-top: 9px;
+    padding-left: 20px;
+}
+
+.container .header .header-info .item-3 a {
     background: url("../images/cart.png") no-repeat;
-    padding: 2px 0 20px 46px;
+    padding: 2px 0 20px 66px;
     text-decoration: none;
     color: #000;
     margin-bottom: 35px;
 }
 
-.container .header .header-info .item-4 span {
+.container .header .header-info .item-3 span {
+    font-family: "Pfdintextcomppro-regular", sans-serif;
     font-size: 20px;
 }
 
-.container .header .header-info .item-4 .shop {
+.container .header .header-info .item-3 .shop {
     margin: -6px 2px 5px 45px;
 }
 
@@ -113,7 +124,7 @@ body {
     text-transform: uppercase;
 }
 
-.container .bt .wrap .menu .nav .nav-item {
+.container .bt .wrap .menu .nav a {
     height: 36px;
     line-height: 36px;
     flex: 1 1;
@@ -126,15 +137,15 @@ body {
     background: url("../images/menu-bg-hov.png");
 }
 
-.container .bt .wrap .menu .nav .nav-item:hover a {
+.container .bt .wrap .menu .nav a .nav-item:hover {
     color: #2f2f2f;
 }
 
-.container .bt .wrap .menu .nav .nav-item a:hover {
+.container .bt .wrap .menu .nav a .nav-item:hover {
     position: relative;
 }
 
-.container .bt .wrap .menu .nav .nav-item a span {
+.container .bt .wrap .menu .nav a .nav-item span {
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
@@ -182,8 +193,12 @@ body {
     flex-flow: column;
 }
 
+.container .footer p {
+    font-size: 11px;
+}
+
 .container .footer-info {
-    background-color: #e86a60;
+    background-color: #cecdcd;
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: center;
@@ -199,6 +214,15 @@ body {
 }
 
 /*стили для footer*/
+
+.container .navigation {
+    padding: 25px 40px 25px 40px;
+}
+
+.container .navigation p {
+    padding-top: 10px;
+
+}
 
 /* конец стилей для компьютеров и базовые стили для всех устройств */
 
@@ -251,20 +275,10 @@ body {
         display: none;
     }
 
-    .container .header {
-        margin-top: 0;
-        margin-bottom: 0;
-        padding-bottom: 2px;
-    }
-
-    .container .header .mheader-info {
-        flex-grow: 3;
-        padding-top: 5px;
-    }
-
     .container .header .mheader-info div {
         float: left;
-        margin-left: 20px;
+        margin-left: 25px;
+        padding: 5px 10px 2px 25px;
     }
 
     .container .header .mheader-info a {
@@ -273,7 +287,7 @@ body {
     }
 
     .container .header .mheader-info p {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .container .bt .wrap .menu .search {
@@ -300,7 +314,7 @@ body {
     }
 
     .container .footer p {
-        font-size: 13px;
+        font-size: 10px;
     }
 
     .container .bt .wrap .mwrap .mmenu:before {
